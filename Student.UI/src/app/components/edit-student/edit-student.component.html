@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-6">
+        <div *ngIf="student">
+            <h2>
+                {{student.firstName +" "+student.lastName}}
+            </h2>
+            <div class="input-group mb-3">
+                <span class="input-group-text col-3" >First name</span>
+                <input type="text" class="form-control " [(ngModel)]="student.firstName" placeholder="firstName">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text col-3">Last name</span>
+                <input type="text" class="form-control " [(ngModel)]="student.lastName"placeholder="lastName">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text col-3">Class name</span>
+                <input type="text" class="form-control " [(ngModel)]="student.className" placeholder="className">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text col-3">Department</span>
+                <input type="text" class="form-control " [(ngModel)]="student.department" placeholder="department">
+            </div>
+               
+            <div>
+                <button class="btn btn-success" (click)="updateStudent(student)" *ngIf="student.id"> Save</button>
+                <button class="btn btn-danger" (click)="deleteStudent(student)" *ngIf="student.id"> Delete</button>
+                <button class="btn btn-primary" (click)="createStudent(student)" *ngIf="!student.id"> Create</button>
+            </div>
+        
+        </div>
+    </div>
+</div>
+    
